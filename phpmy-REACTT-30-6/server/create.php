@@ -1,22 +1,31 @@
 <?php
 
-header("Access-Control-Allow-Origin: *");
 
-$server="localhost";
-$dbusername="root";
-$password="";
-$database="api-react";
-
-$con=mysqli_connect($server,$dbusername,$password,$database);
-
-if(!$con){
-    die("connection feild: ".mysqli_connect_error());
-}
-
-$name=$_REQUEST["name"];
-$email=$_REQUEST["email"];
-$age=$_REQUEST["age"];
-$sql="INSERT INTO user (name,email,age) values ('$name','$email','$age')";
-
-mysqli_query($con,$sql);
+include_once "./connection.php";
 ?>
+
+    
+<?php
+$name = $_REQUEST['name'];
+$email = $_REQUEST['email'];
+$age = $_REQUEST['age'];
+
+
+
+$sql="INSERT INTO users (name,email,age) VALUES ('$name','$email',$age)";
+
+$result  = $conn->query($sql);
+
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+
+
+
+
+?>
+    

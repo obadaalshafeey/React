@@ -15,7 +15,7 @@ this.state={
   // this.setState({
   //       item:data
   //     })
-  axios.get('http://localhost/phpmy-REACTT-30-6/server/read.php')
+  axios.get('http://localhost/phpmy-REACTT-30-6/server/read.php ')
   .then(res=>{
     // {console.log(res.data,"res.data");}
     this.setState({
