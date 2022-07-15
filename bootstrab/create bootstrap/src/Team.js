@@ -1,6 +1,6 @@
 import React from "react";
 
-const Team=props=>{
+const App=props=>{
     console.log(props);
     return(
 
@@ -10,4 +10,4 @@ hello  <span>{props.email}</span>
         </div>
     );
 };
-export default Team;
+export default App;
